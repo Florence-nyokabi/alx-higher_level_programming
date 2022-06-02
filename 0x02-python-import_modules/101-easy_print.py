@@ -1,2 +1,2 @@
 #!/usr/bin/python3
- def #pythoniscool
+sys.stderr.write('#pythoniscool\n')
