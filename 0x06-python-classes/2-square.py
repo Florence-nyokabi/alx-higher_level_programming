@@ -1,26 +1,26 @@
 #!/usr/bin/python3
-"""Square class"""
+"""defines a class Square"""
 
 
 class Square:
-    """__(int): size of a side"""
-    def __init__(self, size):
-        """initializes a square
+    """Represents a square
+
+    Attributes:
+        __size (int): size of a side of the square
+    """
+    def __init__(self, size=0):
+        """initializes the square
 
         Args:
-            size(int):size of a side
+            size (int): size of a side of the square
 
-        Raises:
-            TypeError: size is not an integer
-            ValueError: size is negative
-
-        Return: None
+        Returns:
+            None
         """
-         if type(size) is not int:
-             raise TypeError("size must be an integer")
-         else if:
-             if size < 0:
-                 raise ValueError("size must be >= 0")
-             else:
-                 self.__size = size
-
+        if type(size) is not int:
+            raise TypeError("size must be an integer")
+        else:
+            if size < 0:
+                raise ValueError("size must be >= 0")
+            else:
+                self.__size = size
