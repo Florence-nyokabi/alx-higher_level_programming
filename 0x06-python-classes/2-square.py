@@ -10,6 +10,10 @@ class Square:
         Args:
             size(int):size of a side
 
+        Raises:
+            TypeError: size is not an integer
+            ValueError: size is negative
+
         Return: None
         """
          if type(size) is not int:
