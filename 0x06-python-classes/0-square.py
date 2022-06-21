@@ -3,4 +3,4 @@
 
 class Square:
     """Defines a class square"""
-pass
+    pass
