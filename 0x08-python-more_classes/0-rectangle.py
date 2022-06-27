@@ -1,9 +1,7 @@
 #!/usr/bin/python3
+"""create class"""
 
-"""Creating a new class"""
 
-
-class Square:
-    """Empty Class"""
-
+class Rectangle:
+    """add pass for print the class max {}"""
     pass
