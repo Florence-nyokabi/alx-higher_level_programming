@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 import sys
 
-
+"""
+contains the "print_info" module
+"""
 def print_info():
     print('File size: {:d}'.format(file_size))
 
