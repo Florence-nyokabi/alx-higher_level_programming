@@ -5,6 +5,7 @@ import sys
 contains the "print_info" module
 """
 def print_info():
+    """ script that reads stdin line by line and computes metrics"""
     print('File size: {:d}'.format(file_size))
 
     for scode, code_times in sorted(status_codes.items()):
