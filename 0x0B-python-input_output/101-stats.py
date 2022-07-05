@@ -1,31 +1,52 @@
 #!/usr/bin/python3
+import sys
 
-if __name__ == "__main__":
 
-    import sys
+def print_info():
+    print('File size: {:d}'.format(file_size))
 
-    size = 0
-    statuscd = {}
+    for scode, code_times in sorted(status_codes.items()):
+        if code_times > 0:
+            print('{}: {:d}'.format(scode, code_times))
 
-    while True:
+
+status_codes = {
+    '200': 0,
+    '301': 0,
+    '400': 0,
+    '401': 0,
+    '403': 0,
+    '404': 0,
+    '405': 0,
+    '500': 0
+}
+
+lc = 0
+file_size = 0
+
+try:
+    for line in sys.stdin:
+        if lc != 0 and lc % 10 == 0:
+            print_info()
+
+        pieces = line.split()
+
         try:
-            counter = 0
-            for line in sys.stdin:
-                line = line.split()
+            status = int(pieces[-2])
 
-                size += int(line[8])
-                if statuscd.get(line[7], -1) == -1:
-                    statuscd[line[7]] = 1
-                else:
-                    statuscd[line[7]] += 1
+            if str(status) in status_codes.keys():
+                status_codes[str(status)] += 1
+        except:
+            pass
 
-                if counter == 10:
-                    break
-                counter += 1
+        try:
+            file_size += int(pieces[-1])
+        except:
+            pass
 
-        except KeyboardInterrupt:
-            exit()
-        finally:
-            print("File size: {}".format(size))
-            for key in sorted(statuscd):
-                print("{}: {}".format(key, statuscd[key]))
+        lc += 1
+
+    print_info()
+except KeyboardInterrupt:
+    print_info()
+    raise
