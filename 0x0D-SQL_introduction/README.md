@@ -72,3 +72,48 @@ Bye
 $
 ```
 
+# Use “container-on-demand” to run MySQL
+**In the container, credentials are `root/root`**
+
+ * Ask for container `Ubuntu 20.04`
+ * Connect via SSH
+ * OR connect via the Web terminal
+ * In the container, you should start MySQL before playing with it:
+
+```
+$ service mysql start                                                   
+ * Starting MySQL database server mysqld 
+$
+$ cat 0-list_databases.sql | mysql -uroot -p                               
+Database                                                                                   
+information_schema                                                                         
+mysql                                                                                      
+performance_schema                                                                         
+sys                      
+$
+```
+
+**In the container, credentials are `root/root`**
+
+# Tasks
+## 0. List databases
+
+Write a script that lists all databases of your MySQL server.
+
+```
+guillaume@ubuntu:~/$ cat 0-list_databases.sql | mysql -hlocalhost -uroot -p
+Enter password: 
+Database                                                                                     
+hbtn_0c_0                                                                                    
+information_schema                                                                           
+mysql                                                                                        
+performance_schema                                                                           
+sys        
+guillaume@ubuntu:~/$ 
+```
+
+**Repo:**
+
+ * GitHub repository: `alx-higher_level_programming`
+ * Directory: `0x0D-SQL_introduction`
+ * File: `0-list_databases.sql`
