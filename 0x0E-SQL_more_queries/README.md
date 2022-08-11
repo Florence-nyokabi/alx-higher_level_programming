@@ -273,13 +273,13 @@ guillaume@ubuntu:~/$
    
 # 5. Unique ID
 
-Write a script that creates the table unique_id on your MySQL server.
+Write a script that creates the table `unique_id` on your MySQL server.
 
- * unique_id description:
-  * id INT with the default value 1 and must be unique
-  * name VARCHAR(256)
- * The database name will be passed as an argument of the mysql command
- * If the table unique_id already exists, your script should not fail
+ * `unique_id` description:
+  * `id` INT with the default value 1 and must be unique
+  * `name` VARCHAR(256)
+ * The database name will be passed as an argument of the `mysql` command
+ * If the table `unique_id` already exists, your script should not fail
 
 ```
 guillaume@ubuntu:~/$ cat 5-unique_id.sql | mysql -hlocalhost -uroot -p hbtn_0d_2
@@ -305,15 +305,17 @@ guillaume@ubuntu:~/$
  * Directory: `0x0E-SQL_more_queries`
  * File: `5-unique_id.sql`
    
-6. States table
-mandatory
-Write a script that creates the database hbtn_0d_usa and the table states (in the database hbtn_0d_usa) on your MySQL server.
+# 6. States table
 
-states description:
-id INT unique, auto generated, can’t be null and is a primary key
-name VARCHAR(256) can’t be null
-If the database hbtn_0d_usa already exists, your script should not fail
-If the table states already exists, your script should not fail
+Write a script that creates the database `hbtn_0d_usa` and the table `states` (in the database `hbtn_0d_usa`) on your MySQL server.
+
+ * states description:
+  * `id` INT unique, auto generated, can’t be null and is a primary key
+  * `name` VARCHAR(256) can’t be null
+ * If the database `hbtn_0d_usa` already exists, your script should not fail
+ * If the table `states` already exists, your script should not fail
+
+```
 guillaume@ubuntu:~/$ cat 6-states.sql | mysql -hlocalhost -uroot -p
 Enter password: 
 guillaume@ubuntu:~/$ echo 'INSERT INTO states (name) VALUES ("California"), ("Arizona"), ("Texas");' | mysql -hlocalhost -uroot -p hbtn_0d_usa
@@ -325,22 +327,26 @@ id  name
 2   Arizona
 3   Texas
 guillaume@ubuntu:~/$ 
-Repo:
+```
+**Repo:**
 
-GitHub repository: alx-higher_level_programming
-Directory: 0x0E-SQL_more_queries
-File: 6-states.sql
+ * GitHub repository: `alx-higher_level_programming`
+ * Directory: `0x0E-SQL_more_queries`
+ * File: `6-states.sql`
    
-7. Cities table
-mandatory
-Write a script that creates the database hbtn_0d_usa and the table cities (in the database hbtn_0d_usa) on your MySQL server.
+# 7. Cities table
 
-cities description:
-id INT unique, auto generated, can’t be null and is a primary key
-state_id INT, can’t be null and must be a FOREIGN KEY that references to id of the states table
-name VARCHAR(256) can’t be null
-If the database hbtn_0d_usa already exists, your script should not fail
-If the table cities already exists, your script should not fail
+Write a script that creates the database `hbtn_0d_usa` and the table `cities` (in the database `hbtn_0d_usa`) on your MySQL server.
+
+ * `cities` description:
+  * id `INT` unique, auto generated, can’t be null and is a primary key
+  * `state_id` INT, can’t be null and must be a `FOREIGN KEY` that references to id of the states table
+  * `name` VARCHAR(256) can’t be null
+ * If the database `hbtn_0d_usa` already exists, your script should not fail
+ * If the table `cities` already exists, your script should not fail
+
+
+```
 guillaume@ubuntu:~/$ cat 7-cities.sql | mysql -hlocalhost -uroot -p
 Enter password: 
 guillaume@ubuntu:~/$ echo 'INSERT INTO cities (state_id, name) VALUES (1, "San Francisco");' | mysql -hlocalhost -uroot -p hbtn_0d_usa
@@ -357,20 +363,24 @@ Enter password:
 id  state_id    name
 1   1   San Francisco
 guillaume@ubuntu:~/$ 
-Repo:
+```
+**Repo:**
 
-GitHub repository: alx-higher_level_programming
-Directory: 0x0E-SQL_more_queries
-File: 7-cities.sql
+ * GitHub repository: `alx-higher_level_programming`
+ * Directory: `0x0E-SQL_more_queries`
+ * File: `7-cities.sql`
    
-8. Cities of California
-mandatory
-Write a script that lists all the cities of California that can be found in the database hbtn_0d_usa.
+# 8. Cities of California
 
-The states table contains only one record where name = California (but the id can be different, as per the example)
-Results must be sorted in ascending order by cities.id
-You are not allowed to use the JOIN keyword
-The database name will be passed as an argument of the mysql command
+Write a script that lists all the cities of California that can be found in the database `hbtn_0d_usa`.
+
+ * The states table contains only one record where `name` = `California` (but the `id` can be different, as per the example)
+ * Results must be sorted in ascending order by `cities.id`
+ * You are not allowed to use the `JOIN` keyword
+ * The database name will be passed as an argument of the `mysql` command
+
+
+```
 guillaume@ubuntu:~/$ echo 'SELECT * FROM states;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
 Enter password: 
 id  name
@@ -393,20 +403,23 @@ id  name
 1   San Francisco
 2   San Jose
 guillaume@ubuntu:~/$ 
-Repo:
+```
+**Repo:**
 
-GitHub repository: alx-higher_level_programming
-Directory: 0x0E-SQL_more_queries
-File: 8-cities_of_california_subquery.sql
+ * GitHub repository: `alx-higher_level_programming`
+ * Directory: `0x0E-SQL_more_queries`
+ * File: `8-cities_of_california_subquery.sql`
    
-9. Cities by States
-mandatory
+# 9. Cities by States
+
 Write a script that lists all cities contained in the database hbtn_0d_usa.
 
-Each record should display: cities.id - cities.name - states.name
-Results must be sorted in ascending order by cities.id
-You can use only one SELECT statement
-The database name will be passed as an argument of the mysql command
+ * Each record should display: `cities.id` - `cities.name` - states.name
+ * Results must be sorted in ascending order by `cities.id`
+ * You can use only one `SELECT` statement
+ * The database name will be passed as an argument of the mysql command
+
+```
 guillaume@ubuntu:~/$ echo 'SELECT * FROM states;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
 Enter password: 
 id  name
@@ -433,22 +446,26 @@ id  name    name
 7   Houston Texas
 8   Dallas  Texas
 guillaume@ubuntu:~/$ 
-Repo:
+```
 
-GitHub repository: alx-higher_level_programming
-Directory: 0x0E-SQL_more_queries
-File: 9-cities_by_state_join.sql
+**Repo:**
+
+ * GitHub repository: `alx-higher_level_programming`
+ * Directory: `0x0E-SQL_more_queries`
+ * File: `9-cities_by_state_join.sql`
    
-10. Genre ID by show
-mandatory
-Import the database dump from hbtn_0d_tvshows to your MySQL server: download
+# 10. Genre ID by show
 
-Write a script that lists all shows contained in hbtn_0d_tvshows that have at least one genre linked.
+Import the database dump from `hbtn_0d_tvshows` to your MySQL server: [download](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/hbtn_0d_tvshows.sql)
 
-Each record should display: tv_shows.title - tv_show_genres.genre_id
-Results must be sorted in ascending order by tv_shows.title and tv_show_genres.genre_id
-You can use only one SELECT statement
-The database name will be passed as an argument of the mysql command
+Write a script that lists all shows contained in `hbtn_0d_tvshows` that have at least one genre linked.
+
+ * Each record should display: `tv_shows.title` - `tv_show_genres.genre_id`
+ * Results must be sorted in ascending order by `tv_shows.title` and `tv_show_genres.genre_id`
+ * You can use only one `SELECT` statement
+ * The database name will be passed as an argument of the `mysql` command
+
+```
 guillaume@ubuntu:~/$ cat 10-genre_id_by_show.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password: 
 title   genre_id
@@ -472,23 +489,28 @@ The Big Bang Theory 5
 The Last Man on Earth   1
 The Last Man on Earth   5
 guillaume@ubuntu:~/$ 
-Repo:
+```
 
-GitHub repository: alx-higher_level_programming
-Directory: 0x0E-SQL_more_queries
-File: 10-genre_id_by_show.sql
+**Repo:**
+
+ * GitHub repository: alx-higher_level_programming
+ * Directory: 0x0E-SQL_more_queries
+ * File: 10-genre_id_by_show.sql
    
-11. Genre ID for all shows
-mandatory
-Import the database dump of hbtn_0d_tvshows to your MySQL server: download (same as 10-genre_id_by_show.sql)
+# 11. Genre ID for all shows
+
+Import the database dump of hbtn_0d_tvshows to your MySQL server: [download](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/hbtn_0d_tvshows.sql) (same as `10-genre_id_by_show.sql`)
 
 Write a script that lists all shows contained in the database hbtn_0d_tvshows.
 
-Each record should display: tv_shows.title - tv_show_genres.genre_id
-Results must be sorted in ascending order by tv_shows.title and tv_show_genres.genre_id
-If a show doesn’t have a genre, display NULL
-You can use only one SELECT statement
-The database name will be passed as an argument of the mysql command
+ * Each record should display: `tv_shows.title` - `tv_show_genres.genre_id`
+ * Results must be sorted in ascending order by `tv_shows.title` and `tv_show_genres.genre_id`
+ * If a show doesn’t have a genre, display `NULL`
+ * You can use only one `SELECT` statement
+ * The database name will be passed as an argument of the `mysql` command
+
+
+```
 guillaume@ubuntu:~/$ cat 11-genre_id_all_shows.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password: 
 title   genre_id
@@ -514,14 +536,15 @@ The Big Bang Theory 5
 The Last Man on Earth   1
 The Last Man on Earth   5
 guillaume@ubuntu:~/$ 
-Repo:
+```
+**Repo:**
 
-GitHub repository: alx-higher_level_programming
-Directory: 0x0E-SQL_more_queries
-File: 11-genre_id_all_shows.sql
+ * GitHub repository: `alx-higher_level_programming`
+ * Directory: `0x0E-SQL_more_queries`
+ * File: `11-genre_id_all_shows.sql`
    
-12. No genre
-mandatory
+# 12. No genre
+
 Import the database dump from hbtn_0d_tvshows to your MySQL server: download (same as 11-genre_id_all_shows.sql)
 
 Write a script that lists all shows contained in hbtn_0d_tvshows without a genre linked.
