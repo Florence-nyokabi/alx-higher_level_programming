@@ -493,9 +493,9 @@ guillaume@ubuntu:~/$
 
 **Repo:**
 
- * GitHub repository: alx-higher_level_programming
- * Directory: 0x0E-SQL_more_queries
- * File: 10-genre_id_by_show.sql
+ * GitHub repository: `alx-higher_level_programming`
+ * Directory: `0x0E-SQL_more_queries`
+ * File: `10-genre_id_by_show.sql`
    
 # 11. Genre ID for all shows
 
@@ -545,40 +545,46 @@ guillaume@ubuntu:~/$
    
 # 12. No genre
 
-Import the database dump from hbtn_0d_tvshows to your MySQL server: download (same as 11-genre_id_all_shows.sql)
+Import the database dump from `hbtn_0d_tvshows` to your MySQL server: [download](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/hbtn_0d_tvshows.sql) (same as `11-genre_id_all_shows.sql`)
 
-Write a script that lists all shows contained in hbtn_0d_tvshows without a genre linked.
+Write a script that lists all shows contained in `hbtn_0d_tvshows` without a genre linked.
 
-Each record should display: tv_shows.title - tv_show_genres.genre_id
-Results must be sorted in ascending order by tv_shows.title and tv_show_genres.genre_id
-You can use only one SELECT statement
-The database name will be passed as an argument of the mysql command
+ * Each record should display: `tv_shows.title` - `tv_show_genres.genre_id`
+ * Results must be sorted in ascending order by `tv_shows.title` and `tv_show_genres.genre_id`
+ * You can use only one `SELECT` statement
+ * The database name will be passed as an argument of the `mysql` command
+
+
+```
 guillaume@ubuntu:~/$ cat 12-no_genre.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password: 
 title   genre_id
 Better Call Saul    NULL
 Homeland    NULL
 guillaume@ubuntu:~/$ 
-Repo:
+```
+**Repo:**
 
-GitHub repository: alx-higher_level_programming
-Directory: 0x0E-SQL_more_queries
-File: 12-no_genre.sql
+ * GitHub repository: `alx-higher_level_programming`
+ * Directory: `0x0E-SQL_more_queries`
+ * File: `12-no_genre.sql`
    
-13. Number of shows by genre
-mandatory
-Import the database dump from hbtn_0d_tvshows to your MySQL server: download (same as 12-no_genre.sql)
+# 13. Number of shows by genre
 
-Write a script that lists all genres from hbtn_0d_tvshows and displays the number of shows linked to each.
+Import the database dump from `hbtn_0d_tvshows` to your MySQL server: [download](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/hbtn_0d_tvshows.sql) (same as `12-no_genre.sql`)
 
-Each record should display: <TV Show genre> - <Number of shows linked to this genre>
-First column must be called genre
-Second column must be called number_of_shows
-Don’t display a genre that doesn’t have any shows linked
-Results must be sorted in descending order by the number of shows linked
-You can use only one SELECT statement
-The database name will be passed as an argument of the mysql command
-guillaume@ubuntu:~/$ cat 13-count_shows_by_genre.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+Write a script that lists all genres from `hbtn_0d_tvshows` and displays the number of shows linked to each.
+
+ * Each record should display: `<TV Show genre>` - `<Number of shows linked to this genre>`
+ * First column must be called `genre`
+ * Second column must be called `number_of_shows`
+ * Don’t display a genre that doesn’t have any shows linked
+ * Results must be sorted in descending order by the number of shows linked
+ * You can use only one `SELECT` statement
+ * The database name will be passed as an argument of the `mysql` command
+
+ ```
+ guillaume@ubuntu:~/$ cat 13-count_shows_by_genre.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password: 
 genre   number_of_shows
 Drama   5
@@ -590,23 +596,26 @@ Thriller    2
 Adventure   1
 Fantasy 1
 guillaume@ubuntu:~/$ 
-Repo:
+```
+**Repo:**
 
-GitHub repository: alx-higher_level_programming
-Directory: 0x0E-SQL_more_queries
-File: 13-count_shows_by_genre.sql
+ * GitHub repository: `alx-higher_level_programming`
+ * Directory: `0x0E-SQL_more_queries`
+ * File:`13-count_shows_by_genre.sql`
    
-14. My genres
-mandatory
-Import the database dump from hbtn_0d_tvshows to your MySQL server: download (same as 13-count_shows_by_genre.sql)
+# 14. My genres
 
-Write a script that uses the hbtn_0d_tvshows database to lists all genres of the show Dexter.
+Import the database dump from hbtn_0d_tvshows to your MySQL server: [download](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/hbtn_0d_tvshows.sql) (same as `13-count_shows_by_genre.sql`)
 
-The tv_shows table contains only one record where title = Dexter (but the id can be different)
-Each record should display: tv_genres.name
-Results must be sorted in ascending order by the genre name
-You can use only one SELECT statement
-The database name will be passed as an argument of the mysql command
+Write a script that uses the `hbtn_0d_tvshows` database to lists all genres of the show Dexter.
+
+ * The tv_shows table contains only one record where `title` = `Dexter` (but the `id `can be different)
+ * Each record should display: `tv_genres.name`
+ * Results must be sorted in ascending order by the `genre` name
+ * You can use only one `SELECT`  statement
+ * The database name will be passed as an argument of the `mysql` command
+
+```
 guillaume@ubuntu:~/$ cat 14-my_genres.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password: 
 name
@@ -616,23 +625,25 @@ Mystery
 Suspense
 Thriller
 guillaume@ubuntu:~/$ 
-Repo:
+```
+**Repo:**
 
-GitHub repository: alx-higher_level_programming
-Directory: 0x0E-SQL_more_queries
-File: 14-my_genres.sql
+ * GitHub repository: `alx-higher_level_programming`
+ * Directory: `0x0E-SQL_more_queries`
+ * File: `14-my_genres.sql`
    
-15. Only Comedy
-mandatory
-Import the database dump from hbtn_0d_tvshows to your MySQL server: download (same as 14-my_genres.sql)
+# 15. Only Comedy
 
-Write a script that lists all Comedy shows in the database hbtn_0d_tvshows.
+Import the database dump from `hbtn_0d_tvshows` to your MySQL server: [download](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/hbtn_0d_tvshows.sql) (same as `14-my_genres.sql`)
 
-The tv_genres table contains only one record where name = Comedy (but the id can be different)
-Each record should display: tv_shows.title
-Results must be sorted in ascending order by the show title
-You can use only one SELECT statement
-The database name will be passed as an argument of the mysql command
+Write a script that lists all Comedy shows in the database `hbtn_0d_tvshows`.
+
+ * The `tv_genres` table contains only one record where `name` = `Comedy` (but the `id` can be different)
+ * Each record should display: `tv_shows.title`
+ * Results must be sorted in ascending order by the show title
+ * You can use only one `SELECT` statement
+ * The database name will be passed as an argument of the `mysql` command
+```
 guillaume@ubuntu:~/$ cat 15-comedy_only.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password: 
 title
@@ -641,23 +652,27 @@ Silicon Valley
 The Big Bang Theory
 The Last Man on Earth
 guillaume@ubuntu:~/$ 
-Repo:
+```
 
-GitHub repository: alx-higher_level_programming
-Directory: 0x0E-SQL_more_queries
-File: 15-comedy_only.sql
+**Repo:**
+
+ * GitHub repository: `alx-higher_level_programming`
+ * Directory: `0x0E-SQL_more_queries`
+ * File: `15-comedy_only.sql`
    
-16. List shows and genres
-mandatory
-Import the database dump from hbtn_0d_tvshows to your MySQL server: download (same as 15-comedy_only.sql)
+# 16. List shows and genres
 
-Write a script that lists all shows, and all genres linked to that show, from the database hbtn_0d_tvshows.
+Import the database dump from `hbtn_0d_tvshows` to your MySQL server: [download](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/hbtn_0d_tvshows.sql) (same as `15-comedy_only.sql`)
 
-If a show doesn’t have a genre, display NULL in the genre column
-Each record should display: tv_shows.title - tv_genres.name
-Results must be sorted in ascending order by the show title and genre name
-You can use only one SELECT statement
-The database name will be passed as an argument of the mysql command
+Write a script that lists all shows, and all genres linked to that show, from the database `hbtn_0d_tvshows`.
+
+ * If a show doesn’t have a genre, display `NULL` in the genre column
+ * Each record should display: `tv_shows.title` - `tv_genres.name`
+ * Results must be sorted in ascending order by the show `title` and genre name
+ * You can use only one `SELECT` statement
+ * The database name will be passed as an argument of the `mysql` command
+
+```
 guillaume@ubuntu:~/$ cat 16-shows_by_genre.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password: 
 title   name
@@ -683,23 +698,28 @@ The Big Bang Theory Comedy
 The Last Man on Earth   Comedy
 The Last Man on Earth   Drama
 guillaume@ubuntu:~/$ 
-Repo:
 
-GitHub repository: alx-higher_level_programming
-Directory: 0x0E-SQL_more_queries
-File: 16-shows_by_genre.sql
+```
+
+**Repo:**
+
+ * GitHub repository: `alx-higher_level_programming`
+ * Directory: `0x0E-SQL_more_queries`
+ * File: `16-shows_by_genre.sql`
    
-17. Not my genre
-#advanced
-Import the database dump from hbtn_0d_tvshows to your MySQL server: download (same as 16-shows_by_genre.sql)
+# 17. Not my genre
 
-Write a script that uses the hbtn_0d_tvshows database to list all genres not linked to the show Dexter
+Import the database dump from `hbtn_0d_tvshows` to your MySQL server: [download](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/hbtn_0d_tvshows.sql) (same as `16-shows_by_genre.sql`)
 
-The tv_shows table contains only one record where title = Dexter (but the id can be different)
-Each record should display: tv_genres.name
-Results must be sorted in ascending order by the genre name
-You can use a maximum of two SELECT statement
-The database name will be passed as an argument of the mysql command
+Write a script that uses the `hbtn_0d_tvshows` database to list all genres not linked to the show Dexter
+
+ * The `tv_shows` table contains only one record where `title` = `Dexter` (but the id can be different)
+ * Each record should display: `tv_genres.name`
+ * Results must be sorted in ascending order by the genre name
+ * You can use a maximum of two `SELECT` statement
+ * The database name will be passed as an argument of the `mysql` command
+
+```
 guillaume@ubuntu:~/$ cat 100-not_my_genres.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password: 
 name
@@ -707,23 +727,28 @@ Adventure
 Comedy
 Fantasy
 guillaume@ubuntu:~/$ 
-Repo:
+```
 
-GitHub repository: alx-higher_level_programming
-Directory: 0x0E-SQL_more_queries
-File: 100-not_my_genres.sql
+**Repo:**
+
+ * GitHub repository: `alx-higher_level_programming`
+ * Directory: `0x0E-SQL_more_queries`
+ * File: `100-not_my_genres.sql`
    
-18. No Comedy tonight!
-#advanced
-Import the database dump from hbtn_0d_tvshows to your MySQL server: download (same as 100-not_my_genres.sql)
+# 18. No Comedy tonight!
 
-Write a script that lists all shows without the genre Comedy in the database hbtn_0d_tvshows.
+Import the database dump from `hbtn_0d_tvshows` to your MySQL server: [download](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/hbtn_0d_tvshows.sql) (same as `100-not_my_genres.sql`)
 
-The tv_genres table contains only one record where name = Comedy (but the id can be different)
-Each record should display: tv_shows.title
-Results must be sorted in ascending order by the show title
-You can use a maximum of two SELECT statement
-The database name will be passed as an argument of the mysql command
+Write a script that lists all shows without the genre Comedy in the database `hbtn_0d_tvshows`.
+
+ * The `tv_genres` table contains only one record where `name` = `Comedy` (but the id can be different)
+ * Each record should display: `tv_shows.title`
+ * Results must be sorted in ascending order by the show title
+ * You can use a maximum of two `SELECT` statement
+ * The database name will be passed as an argument of the `mysql` command
+
+
+```
 guillaume@ubuntu:~/$ cat 101-not_a_comedy.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password: 
 title
@@ -734,22 +759,25 @@ Game of Thrones
 Homeland
 House
 guillaume@ubuntu:~/$ 
-Repo:
+```
+**Repo:**
 
-GitHub repository: alx-higher_level_programming
-Directory: 0x0E-SQL_more_queries
-File: 101-not_a_comedy.sql
+ * GitHub repository: `alx-higher_level_programming`
+ * Directory: `0x0E-SQL_more_queries`
+ * File: `101-not_a_comedy.sql`
    
-19. Rotten tomatoes
-#advanced
-Import the database hbtn_0d_tvshows_rate dump to your MySQL server: download
+# 19. Rotten tomatoes
 
-Write a script that lists all shows from hbtn_0d_tvshows_rate by their rating.
+Import the database `hbtn_0d_tvshows_rate` dump to your MySQL server: [download](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/hbtn_0d_tvshows_rate.sql)
 
-Each record should display: tv_shows.title - rating sum
-Results must be sorted in descending order by the rating
-You can use only one SELECT statement
-The database name will be passed as an argument of the mysql command
+Write a script that lists all shows from `hbtn_0d_tvshows_rate` by their rating.
+
+ * Each record should display: `tv_shows.title` - `rating sum`
+ * Results must be sorted in descending order by the rating
+ * You can use only one `SELECT` statement
+ * The database name will be passed as an argument of the `mysql` command
+
+```
 guillaume@ubuntu:~/$ cat 102-rating_shows.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows_rate
 Enter password: 
 title   rating
@@ -764,22 +792,25 @@ The Last Man on Earth   10
 The Big Bang Theory 0
 New Girl    0
 guillaume@ubuntu:~/$ 
-Repo:
+```
+**Repo:**
 
-GitHub repository: alx-higher_level_programming
-Directory: 0x0E-SQL_more_queries
-File: 102-rating_shows.sql
+ * GitHub repository: `alx-higher_level_programming`
+ * Directory: `0x0E-SQL_more_queries`
+ * File: `102-rating_shows.sql`
    
-20. Best genre
-#advanced
-Import the database dump from hbtn_0d_tvshows_rate to your MySQL server: download (same as 102-rating_shows.sql)
+# 20. Best genre
 
-Write a script that lists all genres in the database hbtn_0d_tvshows_rate by their rating.
+Import the database dump from `hbtn_0d_tvshows_rate` to your MySQL server: [download](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/hbtn_0d_tvshows_rate.sql) (same as `102-rating_shows.sql`)
 
-Each record should display: tv_genres.name - rating sum
+Write a script that lists all genres in the database `hbtn_0d_tvshows_rate` by their rating.
+
+Each record should display: `tv_genres.name` - `rating sum`
 Results must be sorted in descending order by their rating
-You can use only one SELECT statement
-The database name will be passed as an argument of the mysql command
+You can use only one `SELECT` statement
+The database name will be passed as an argument of the `mysql` command
+
+```
 guillaume@ubuntu:~/$ cat 103-rating_genres.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows_rate
 Enter password: 
 name    rating
@@ -791,9 +822,10 @@ Mystery 45
 Crime   40
 Suspense    40
 Thriller    40
-guillaume@ubuntu:~/$ 
-Repo:
+guillaume@ubuntu:~/$
+```
+**Repo:**
 
-GitHub repository: alx-higher_level_programming
-Directory: 0x0E-SQL_more_queries
-File: 103-rating_genres.sql
+ * GitHub repository: `alx-higher_level_programming`
+ * Directory: `0x0E-SQL_more_queries`
+ * File: `103-rating_genres.sql`
