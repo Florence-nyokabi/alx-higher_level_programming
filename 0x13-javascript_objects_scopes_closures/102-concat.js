@@ -1,4 +1,5 @@
 #!/usr/bin/node
+
 let fileA = process.argv[2];
 let fileB = process.argv[3];
 let fileC = process.argv[4];
