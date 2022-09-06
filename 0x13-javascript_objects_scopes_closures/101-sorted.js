@@ -1,4 +1,5 @@
 #!/usr/bin/node
+
 let dict = require('./101-data.js').dict;
 let newDict = {};
 for (let key in dict) {
