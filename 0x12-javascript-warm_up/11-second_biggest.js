@@ -1,16 +1,17 @@
 #!/usr/bin/node
 
-const { argv } = require('process');
-if (!argv[3]) {
-  console.log(0);
-} else if (argv[2] && argv[3] && argv[2] === argv[3]) {
-  console.log(0);
-} else if (argv[2] && argv[3]) {
-  const unique = [...new Set(argv)];
-  function comparar (a, b) {
-    return (a - b);
+let numbers = process.argv.slice(2);
+numbers = numbers.map(number => parseInt(number, 10));
+
+let biggest = 0;
+let secondBiggest = 0;
+
+for (const num of numbers) {
+  if (num >= biggest) {
+    secondBiggest = biggest;
+    biggest = num;
   }
-  unique.sort(comparar);
-  const number = unique.length;
-  console.log(parseInt(unique[number - 2]));
+  if (num < biggest && num >= secondBiggest) secondBiggest = num;
 }
+
+console.log(secondBiggest);
